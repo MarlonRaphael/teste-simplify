@@ -1,0 +1,288 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none !important;
+    color: black;
+}
+
+.container.cards {
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.col {
+    padding: 1rem;
+}
+
+@media (min-width: 800px) {
+    .col {
+        width: 50%;
+        float: left;
+    }
+
+    .col:nth-of-type(2n+1) {
+        clear: left;
+    }
+}
+
+.card {
+    display: block;
+}
+
+.card .content {
+    padding: 4rem 1rem;
+}
+
+.card .title {
+    font-size: 1.25rem;
+    background-color: gray;
+    border-radius: 3px;
+    padding: 0.5rem;
+}
+
+.card-10 .content {
+    background-color: #5eb8ff !important;
+    border-radius: 3px;
+}
+
+.card-10:before, .card-10:after {
+    border-radius: 3px;
+}
+
+.card-10:before {
+    background-color: #0288d1 !important;
+}
+
+.card-10 .title, .card-10:after {
+    background-color: #005b9f !important;
+}
+
+[class*='stacked--'] {
+    position: relative;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    will-change: transform;
+}
+
+[class*='stacked--']:before, [class*='stacked--']:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    will-change: transform;
+}
+
+[class*='stacked--']:before {
+    z-index: -1;
+}
+
+[class*='stacked--']:after {
+    z-index: -2;
+}
+
+.stacked--left:before, .stacked--left:after {
+    -webkit-transform-origin: right center;
+    transform-origin: right center;
+}
+
+.stacked--left:hover {
+    -webkit-transform: translate(-5px, 0);
+    transform: translate(-5px, 0);
+}
+
+.stacked--left:hover:before {
+    -webkit-transform: translate(5px, 0) scale(0.95);
+    transform: translate(5px, 0) scale(0.95);
+}
+
+.stacked--left:hover:after {
+    -webkit-transform: translate(10px, 0) scale(0.9);
+    transform: translate(10px, 0) scale(0.9);
+}
+
+.stacked--right:before, .stacked--right:after {
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.stacked--right:hover {
+    -webkit-transform: translate(5px, 0);
+    transform: translate(5px, 0);
+}
+
+.stacked--right:hover:before {
+    -webkit-transform: translate(-5px, 0) scale(0.95);
+    transform: translate(-5px, 0) scale(0.95);
+}
+
+.stacked--right:hover:after {
+    -webkit-transform: translate(-10px, 0) scale(0.9);
+    transform: translate(-10px, 0) scale(0.9);
+}
+
+.stacked--up:before, .stacked--up:after {
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+}
+
+.stacked--up:hover {
+    -webkit-transform: translate(0, -5px);
+    transform: translate(0, -5px);
+}
+
+.stacked--up:hover:before {
+    -webkit-transform: translate(0, 5px) scale(0.95);
+    transform: translate(0, 5px) scale(0.95);
+}
+
+.stacked--up:hover:after {
+    -webkit-transform: translate(0, 10px) scale(0.9);
+    transform: translate(0, 10px) scale(0.9);
+}
+
+.stacked--down:before, .stacked--down:after {
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+}
+
+.stacked--down:hover {
+    -webkit-transform: translate(0, 5px);
+    transform: translate(0, 5px);
+}
+
+.stacked--down:hover:before {
+    -webkit-transform: translate(0, -5px) scale(0.95);
+    transform: translate(0, -5px) scale(0.95);
+}
+
+.stacked--down:hover:after {
+    -webkit-transform: translate(0, -10px) scale(0.9);
+    transform: translate(0, -10px) scale(0.9);
+}
+
+.stacked--up-left:hover {
+    -webkit-transform: translate(-5px, -5px);
+    transform: translate(-5px, -5px);
+}
+
+.stacked--up-left:hover:before {
+    -webkit-transform: translate(5px, 5px);
+    transform: translate(5px, 5px);
+}
+
+.stacked--up-left:hover:after {
+    -webkit-transform: translate(10px, 10px);
+    transform: translate(10px, 10px);
+}
+
+.stacked--up-right:hover {
+    -webkit-transform: translate(5px, -5px);
+    transform: translate(5px, -5px);
+}
+
+.stacked--up-right:hover:before {
+    -webkit-transform: translate(-5px, 5px);
+    transform: translate(-5px, 5px);
+}
+
+.stacked--up-right:hover:after {
+    -webkit-transform: translate(-10px, 10px);
+    transform: translate(-10px, 10px);
+}
+
+.stacked--down-left:hover {
+    -webkit-transform: translate(-5px, 5px);
+    transform: translate(-5px, 5px);
+}
+
+.stacked--down-left:hover:before {
+    -webkit-transform: translate(5px, -5px);
+    transform: translate(5px, -5px);
+}
+
+.stacked--down-left:hover:after {
+    -webkit-transform: translate(10px, -10px);
+    transform: translate(10px, -10px);
+}
+
+.stacked--down-right:hover {
+    -webkit-transform: translate(5px, 5px);
+    transform: translate(5px, 5px);
+}
+
+.stacked--down-right:hover:before {
+    -webkit-transform: translate(-5px, -5px);
+    transform: translate(-5px, -5px);
+}
+
+.stacked--down-right:hover:after {
+    -webkit-transform: translate(-10px, -10px);
+    transform: translate(-10px, -10px);
+}
+
+.stacked--fan-left {
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+}
+
+.stacked--fan-left:before, .stacked--fan-left:after {
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+}
+
+.stacked--fan-left:hover {
+    -webkit-transform: translate(-2.5px, 0) rotate(-2.5deg);
+    transform: translate(-2.5px, 0) rotate(-2.5deg);
+}
+
+.stacked--fan-left:hover:before {
+    -webkit-transform: translate(2.5px, 0) rotate(2.5deg);
+    transform: translate(2.5px, 0) rotate(2.5deg);
+}
+
+.stacked--fan-left:hover:after {
+    -webkit-transform: translate(5px, 0) rotate(5deg);
+    transform: translate(5px, 0) rotate(5deg);
+}
+
+.stacked--fan-right {
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+}
+
+.stacked--fan-right:before, .stacked--fan-right:after {
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+.stacked--fan-right:hover {
+    -webkit-transform: translate(2.5px, 0) rotate(2.5deg);
+    transform: translate(2.5px, 0) rotate(2.5deg);
+}
+
+.stacked--fan-right:hover:before {
+    -webkit-transform: translate(-2.5px, 0) rotate(-2.5deg);
+    transform: translate(-2.5px, 0) rotate(-2.5deg);
+}
+
+.stacked--fan-right:hover:after {
+    -webkit-transform: translate(-5px, 0) rotate(-5deg);
+    transform: translate(-5px, 0) rotate(-5deg);
+}
